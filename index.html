@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Movie Search</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="movie.css">
+
+    <!-- EmailJS -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+</head>
+
+<body>
+
+
+    <!-- LOGIN / SIGNUP SECTION -->
+    <div class="container" id="authSection">
+
+        <!-- LOGIN -->
+        <div id="loginForm">
+
+            <h1> 🎬Welcome to Movie Search App</h1>
+            <p>Login to continue</p>
+
+            <form id="loginFormElement" autocomplete="off">
+
+           <input
+                 type="email"
+                  id="loginEmail"
+                     name="loginEmail"
+                    autocomplete="off"
+                    placeholder="Email"
+                  required
+   
+>
+
+                <input
+    type="password"
+    id="loginPassword"
+    name="loginPassword"
+    autocomplete="new-password"
+    placeholder="Password"
+    required
+>
+
+                <button type="submit">
+                    Login
+                </button>
+
+            </form>
+
+            <br>
+
+            <p>
+                Don't have an account?
+
+                <button
+                    type="button"
+                    onclick="showSignup()">
+                    Sign Up
+                </button>
+            </p>
+
+        </div>
+
+
+        <!-- SIGNUP -->
+        <div id="signupForm" style="display: none;">
+
+            <h1>Create Account</h1>
+            <p>Sign up to continue</p>
+
+            <form id="signupFormElement" autocomplete="off">
+
+    <input
+        type="text"
+        id="signupName"
+        name="signupName"
+        autocomplete="off"
+        placeholder="Full Name"
+        required
+    >
+
+    <input
+        type="email"
+        id="signupEmail"
+        name="signupEmail"
+        autocomplete="off"
+        placeholder="Email"
+        required
+    >
+
+    <input
+        type="password"
+        id="signupPassword"
+        name="signupPassword"
+        autocomplete="new-password"
+        placeholder="Password"
+        required
+    >
+
+    <button type="submit">
+        Sign Up
+    </button>
+
+</form>
+
+            <br>
+
+            <p>
+                Already have an account?
+
+                <button
+                    type="button"
+                    onclick="showLogin()">
+                    Login
+                </button>
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- MOVIE SECTION -->
+    <div id="movieSection" style="display: none;">
+
+        <!-- HEADER -->
+        <header>
+
+            <h1>🎬 Movie Search App</h1>
+
+            <nav>
+
+                <button
+                    type="button"
+                    onclick="showHome()">
+                    🏠 Home
+                </button>
+
+                <button
+                    type="button"
+                    onclick="showFavorites()">
+                    ❤️ Favorites
+                </button>
+
+                <button
+                    type="button"
+                    onclick="showWatchlist()">
+                    🔖 Watchlist
+                </button>
+
+                <button
+                    type="button"
+                    onclick="showFeedback()">
+                    💬 Feedback
+                </button>
+                <button
+    type="button"
+    onclick="logoutUser()">
+    🚪 Logout
+</button>
+
+            </nav>
+
+        </header>
+
+
+        <!-- MAIN CONTENT -->
+        <main>
+
+            <!-- SEARCH BOX -->
+            <div class="search-box">
+
+                <input
+                    type="text"
+                    id="movieInput"
+                    placeholder="Enter movie name..."
+                >
+
+                <button id="searchBtn">
+                    Search
+                </button>
+
+            </div>
+
+
+            <!-- MOVIES -->
+            <div id="movieContainer">
+
+                <!-- Movies will appear here -->
+
+            </div>
+
+
+            <!-- FEEDBACK -->
+            <div
+                id="feedbackSection"
+                style="display: none;">
+
+                <h2>💬 Give Your Feedback</h2>
+
+                <form id="contactForm">
+
+                    <input
+                        type="text"
+                        name="name"
+                        placeholder="Your Name"
+                        required
+                    >
+
+                    <input
+                        type="email"
+                        name="email"
+                        placeholder="Your Email"
+                        required
+                    >
+                    <textarea
+                       name="message"
+                       placeholder="Write your feedback..."
+                       required></textarea>
+                      <!-- </textarea> -->
+
+
+                    <button type="submit">
+                        Send Feedback
+                    </button>
+
+                </form>
+
+                <p id="status"></p>
+
+            </div>
+
+        </main>
+        
+    <footer class="footer">
+    <h3>🎬 Movie Search App</h3>
+
+    <p>Discover your favourite movies, all in one place.</p>
+
+    <div class="footer-links">
+        <a href="#" onclick="showHome(); return false;">Home</a>
+        <a href="#" onclick="showFavorites(); return false;">Favorites</a>
+        <a href="#" onclick="showWatchlist(); return false;">Watchlist</a>
+        <a href="#" onclick="showFeedback(); return false;">Feedback</a>
+    </div>
+
+    <p class="copyright">
+        © 2026 Movie Search App. All rights reserved.
+    </p>
+</footer>
+
+    </div>
+
+
+
+    <!-- JAVASCRIPT -->
+    <script src="script.js"></script>
+    <script src="movie.js"></script>
+    
+    
+
+
+</body>
+
+</html>
